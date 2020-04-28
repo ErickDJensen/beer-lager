@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './BeerLog.css'
+
+
 class Beer_Log extends Component {
+
+componentDidMount() {
+    this.getLog();
+}
+
+getLog = () => {
+    console.log('In getLog');
+    this.props.dispatch({type: 'FETCH_BEERLOG'});
+}
+
+
     render() {
         return (
-            <div class="container">
+            <div className="container">
                 <h1>Beer Log</h1>
-                <table class="centered highlight">
+                <button className="waves-effect waves-light btn-small"><i className="material-icons right">add</i>Log In Beer</button>
+                <table className="centered highlight">
                     <thead>
                         <tr>
                             <th>Brewery</th>
@@ -20,27 +36,18 @@ class Beer_Log extends Component {
                     </thead>
 
                     <tbody>
-                    <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
+                    
                     </tbody>
                 </table>
-
+                    {JSON.stringify(this.props.reduxStore.beerLog)}
             </div>
         )
     }
 }
 
-export default Beer_Log
+const putPropsOnRedux = (reduxStore) => ({
+    reduxStore
+})
+
+
+export default withRouter(connect(putPropsOnRedux)(Beer_Log));
