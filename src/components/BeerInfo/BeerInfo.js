@@ -4,7 +4,7 @@ class BeerInfo extends Component {
     render() {
         return (
             <div>
-                
+                <p>Beer Info</p>
             </div>
         )
     }

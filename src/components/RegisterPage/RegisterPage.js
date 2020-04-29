@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './RegisterPage.css';
-
 class RegisterPage extends Component {
   state = {
     username: '',
@@ -77,7 +76,7 @@ class RegisterPage extends Component {
         <center>
           <button
             type="button"
-            className="link-buttons"
+            className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_LOGIN_MODE'})}}
           >
             Login
@@ -96,4 +95,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(RegisterPage);
-

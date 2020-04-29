@@ -31,7 +31,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="">
+      <div>
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
@@ -73,7 +73,7 @@ class LoginPage extends Component {
             />
           </div>
         </form>
-        <div id="register">
+        <center>
           <button
             type="button"
             className="link-button"
@@ -81,7 +81,7 @@ class LoginPage extends Component {
           >
             Register
           </button>
-        </div>
+        </center>
       </div>
     );
   }
