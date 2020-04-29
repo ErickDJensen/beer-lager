@@ -5,3 +5,9 @@
 /* #images {
     width: 300px;
 } */
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}

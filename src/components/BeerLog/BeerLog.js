@@ -46,7 +46,7 @@ getBeerLog = () => {
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button className="waves-effect waves-light btn-small">Edit</button><button className="waves-effect waves-light btn-small">Delete</button></td>
+                        <td><button className="waves-effect waves-light btn-small">Edit</button><div class="divider"/><button className="waves-effect waves-light btn-small margin:5px">Delete</button></td>
                         </tr>)}
                  
                     </tbody>
