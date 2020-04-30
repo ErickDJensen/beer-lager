@@ -47,13 +47,83 @@ class LogBeerForm extends Component {
                     <div>
                         <h1>Log Beer Form</h1>
                         <form className="beerform">
-                            <div>
+                        <div>
                                 <label>Brewery:</label>
                                 <select>
                                     <option value="" defaultValue="Choose your option">Choose your option</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
+                                    <option value="1">10K Brewing</option>
+                                    <option value="2">56 Brewing </option>
+                                    <option value="3">612 Brew </option>
+                                    <option value="4">Able Seedhouse and Brewery</option>
+                                    <option value="5">August Schell Brewing Co.</option>
+                                    <option value="6">Badger Hill Brewing Co.</option>
+                                    <option value="7">Bad Habit Brewing Co.</option>
+                                    <option value="8">Bad Weather Brewing Co.</option>
+                                    <option value="9">Bang Brewing</option>
+                                    <option value="10">Bank Brewing Co.</option>
+                                    <option value="11">Bauhaus Brew Labs</option>
+                                    <option value="12">Beaver Island Brewing</option>
+                                    <option value="13">Bemidji Brewing Co.</option>
+                                    <option value="14">Bent Brewstillery</option>
+                                    <option value="15">Bent Paddle Brewing Co.</option>
+                                    <option value="16">Big Axe Brewing Company</option>
+                                    <option value="17">Big Wood Brewery</option>
+                                    <option value="18">Blacklist Brewing Company</option>
+                                    <option value="19">Boom Island Brewing Co.</option>
+                                    <option value="20">Borealis Fermentery</option>
+                                    <option value="21">Brau Brothers Brewing Co.</option>
+                                    <option value="22">Burning Brothers Brewing Co.</option>
+                                    <option value="23">Castle Danger Brewery</option>
+                                    <option value="24">Dangerous Man Brewing Co.</option>
+                                    <option value="25">Eastlake Brewery and Tavern</option>
+                                    <option value="26">Enki Brewing Co.</option>
+                                    <option value="27">Excelsior Brewing Co.</option>
+                                    <option value="28">Fair State Brewing Cooperative</option>
+                                    <option value="29">Flat Earth Brewing Co.</option>
+                                    <option value="30">Fulton Brewing Co.</option>
+                                    <option value="31">Goat Ridge Brewing Co.</option>
+                                    <option value="32">Gull Dam Brewing</option>
+                                    <option value="33">Hammerheart Brewinging Co.</option>
+                                    <option value="34">Harriet Brewing</option>
+                                    <option value="35">Hayes Public House</option>
+                                    <option value="36">Indeed Brewing Co.</option>
+                                    <option value="37">Insight Brewing </option>
+                                    <option value="38">Jack Pine Brewery</option>
+                                    <option value="39">Junkyard Brewing Co.</option>
+                                    <option value="40">Kinney Creek Brewery</option>
+                                    <option value="41">Lake Superior Brewing Co.</option>
+                                    <option value="42">Lazy Loon Brewing</option>
+                                    <option value="43">Lift Bridge Brewery</option>
+                                    <option value="44">LTD Brewing Co.</option>
+                                    <option value="45">Lucid Brewing</option>
+                                    <option value="46">Lupine Brewing Company</option>
+                                    <option value="47">Lupulin Brewing Co.</option>
+                                    <option value="48">LynLake Brewery</option>
+                                    <option value="49">Mankato Brewery</option>
+                                    <option value="50">Mantorville Brewing Co.</option>
+                                    <option value="51">Maple Island Brewing Co.</option>
+                                    <option value="52">Montgomery Brewing Co.</option>
+                                    <option value="53">NorthGate</option>
+                                    <option value="54">Olvalde Farm and Brewing Company</option>
+                                    <option value="55">Pryes Brewing</option>
+                                    <option value="56">Schram Vineyard Winery and Brewery</option>
+                                    <option value="57">Sidhe Brewing Co.</option>
+                                    <option value="58">Sisyphus Brewing</option>
+                                    <option value="59">Sociable Cider Werks</option>
+                                    <option value="60">South Fork Brewing Co.</option>
+                                    <option value="61">Spilled Grain Brewhouse</option>
+                                    <option value="62">Steel Toe Brewing Co.</option>
+                                    <option value="63">Summit Brewing Co.</option>
+                                    <option value="64">Surly Brewing Co.</option>
+                                    <option value="65">Take 16 Brewing</option>
+                                    <option value="66">Third Street Brewhouse</option>
+                                    <option value="67">Tin Whiskers Brewing</option>
+                                    <option value="68">Urban Growler Brewing Co.</option>
+                                    <option value="69">Vine Park Brewing Co.</option>
+                                    <option value="71">Voyageur Brewing Co.</option>
+                                    <option value="72">Wabasha Brewing Co.</option>
+                                    <option value="73">Take 16 Brewing</option>
+                                    <option value="74">Wenonah Brewing Co.</option>
                                 </select>
                             </div>
                             <div>

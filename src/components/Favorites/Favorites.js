@@ -5,6 +5,7 @@ class Favorites extends Component {
         return (
             <div>
                 <p>Favorites</p>
+                
             </div>
         )
     }
