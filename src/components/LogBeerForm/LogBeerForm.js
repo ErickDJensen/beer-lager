@@ -6,6 +6,8 @@ import './LogBeerForm.css'
 
 class LogBeerForm extends Component {
 
+    
+
     state = {
         // image: null,
         // url: '',
@@ -16,6 +18,10 @@ class LogBeerForm extends Component {
         date: '',
         rating: '',
         comments: ''
+      }
+
+      componentDidMount = () => {
+          this.props.dispatch({type: 'FETCH_BEERINFO'})
       }
     
     //   handleChange = (event) => {
@@ -153,20 +159,14 @@ class LogBeerForm extends Component {
                             <div value={this.state.beerStyle} onChange={(event) => this.handleChangeFor('beerStyle', event)}>
                                 <label>Beer Style:</label>
                                 <select>
+                                    {this.props.reduxStore.beerInfo && 
+                                    <>
                                     <option value="" defaultValue="Choose your option">Choose your option</option>
-                                    <option value="Belgian Style">Belgian Style</option>
-                                    <option value="Bocks">Bocks</option>
-                                    <option value="Brown Ale">Brown Ale</option>
-                                    <option value="Dark Lager">Dark Lager</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                    <option value="India Pale Ale">India Pale Ale</option>
-                                    <option value="Pale Ale">Pale Ale</option>
-                                    <option value="Pilsner">Pilsner</option>
-                                    <option value="Porter">Porter</option>
-                                    <option value="Specialty Beer">Specialty Beer</option>
-                                    <option value="Stout">Stout</option>
-                                    <option value="Wheat Beer">Wheat Beer</option>
-                                    <option value="Wild/Sour Beer">Wild/Sour Beer</option>
+                                        {this.props.reduxStore.beerInfo.map(beer => 
+                                            <option key={beer.id}value={beer.name}>{beer.name}</option>
+                                            )}
+                                        </>
+                                    }
                                 </select>
                             </div>
                             <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
@@ -207,6 +207,8 @@ class LogBeerForm extends Component {
     }
 }
 
+const putPropsOnRedux = (reduxStore) => ({
+    reduxStore
+})
 
-
-export default withRouter(connect()(LogBeerForm));
+export default withRouter(connect(putPropsOnRedux)(LogBeerForm));

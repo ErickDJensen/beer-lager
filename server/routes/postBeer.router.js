@@ -7,9 +7,9 @@ router.post('/',  (req, res) => {
     let newEntry = req.body;
     console.log(`Adding feedback`, newEntry);
     //Query text to establish the data being sent to the DB
-    let queryText = `INSERT INTO "user_input" ("feeling", "understanding", "support", "comments")
-                     VALUES ($1, $2, $3, $4);`;
-    pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
+    let queryText = `INSERT INTO "user_input" ()
+                     VALUES ();`;
+    pool.query(queryText, [])
       .then(result => {
         res.sendStatus(201);
       })
