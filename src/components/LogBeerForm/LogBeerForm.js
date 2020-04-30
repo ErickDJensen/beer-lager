@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './LogBeerForm.css'
 // import {storage} from '../Firebase';
 
@@ -13,7 +15,7 @@ class LogBeerForm extends Component {
         beerName: '',
         date: '',
         rating: '',
-        comments: '',
+        comments: ''
       }
     
     //   handleChange = (event) => {
@@ -48,6 +50,7 @@ class LogBeerForm extends Component {
     handleClick = (event) => {
         event.preventDefault();
         console.log('In handleClick', this.state);
+        this.props.dispatch({type: 'POST_BEERINFO'});
     }
     
     handleChangeFor = (name, event) => {
@@ -147,26 +150,26 @@ class LogBeerForm extends Component {
                                 <label>Beer Name:</label>
                                 <input type="text"></input>
                             </div>
-                            <div>
+                            <div value={this.state.beerStyle} onChange={(event) => this.handleChangeFor('beerStyle', event)}>
                                 <label>Beer Style:</label>
                                 <select>
                                     <option value="" defaultValue="Choose your option">Choose your option</option>
-                                    <option value="1">Belgian Style</option>
-                                    <option value="2">Bocks</option>
-                                    <option value="3">Brown Ale</option>
-                                    <option value="4">Dark Lager</option>
-                                    <option value="5">Hybrid</option>
-                                    <option value="6">India Pale Ale</option>
-                                    <option value="7">Pale Ale</option>
-                                    <option value="8">Pilsner</option>
-                                    <option value="9">Porter</option>
-                                    <option value="10">Specialty Beer</option>
-                                    <option value="11">Stout</option>
-                                    <option value="12">Wheat Beer</option>
-                                    <option value="13">Wild/Sour Beer</option>
+                                    <option value="Belgian Style">Belgian Style</option>
+                                    <option value="Bocks">Bocks</option>
+                                    <option value="Brown Ale">Brown Ale</option>
+                                    <option value="Dark Lager">Dark Lager</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="India Pale Ale">India Pale Ale</option>
+                                    <option value="Pale Ale">Pale Ale</option>
+                                    <option value="Pilsner">Pilsner</option>
+                                    <option value="Porter">Porter</option>
+                                    <option value="Specialty Beer">Specialty Beer</option>
+                                    <option value="Stout">Stout</option>
+                                    <option value="Wheat Beer">Wheat Beer</option>
+                                    <option value="Wild/Sour Beer">Wild/Sour Beer</option>
                                 </select>
                             </div>
-                            <div>
+                            <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
                                 <label>Date:</label>
                                 <input type="date"></input>
                             </div>
@@ -183,7 +186,7 @@ class LogBeerForm extends Component {
                                 <input value="1" className="star star-1" id="star-1" type="radio" name="star" />
                                 <label className="star star-1" htmlFor="star-1"></label>
                             </div>
-                            <div>
+                            <div value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
                                 <label>Comments:</label>
                                 <textarea></textarea>
                             </div>
@@ -206,4 +209,4 @@ class LogBeerForm extends Component {
 
 
 
-export default LogBeerForm
+export default withRouter(connect()(LogBeerForm));
