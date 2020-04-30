@@ -106,6 +106,9 @@ class LogBeerForm extends Component {
                                 <button onClick={this.handleUpload}>Upload</button>
                                 <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400" />
                             </div>
+                            <div>
+                                <button>Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>

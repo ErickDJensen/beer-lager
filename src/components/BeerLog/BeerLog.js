@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './BeerLog.css'
+import './BeerLog.css';
 
 
 class Beer_Log extends Component {
@@ -46,12 +46,11 @@ getBeerLog = () => {
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button className="waves-effect waves-light btn-small">Edit</button><div className="divider"/><button className="waves-effect waves-light btn-small margin:5px">Delete</button></td>
+                        <td><button>Edit</button><div className="divider"/><button>Delete</button></td>
                         </tr>)}
                  
                     </tbody>
                 </table>
-                    {/* {JSON.stringify(this.props.reduxStore.beerLog)} */}
             </div>
             </>
         )
