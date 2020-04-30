@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* BeerLogSaga() {
+function* beerLogSaga() {
     yield takeEvery('FETCH_BEERLOG', fetchBeerLogSaga);
 }
 
@@ -21,4 +21,4 @@ function* fetchBeerLogSaga() {
 
 
 
-export default BeerLogSaga;
+export default beerLogSaga;

@@ -11,7 +11,8 @@ class BeerInfo extends Component {
     getBeerInfo = () => {
         console.log('In getBeerInfo');
         this.props.dispatch({type: 'FETCH_BEERINFO'});
-    }
+    } 
+    
     render() {
         return (
             <div>

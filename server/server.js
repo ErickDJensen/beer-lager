@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const beerLogRouter = require('./routes/beerLog.router');
 const beerInfoRouter = require('./routes/beerInfo.router');
+const breweriesRouter = require('./routes/breweries.router')
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,6 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/beerlog', beerLogRouter);
 app.use('/api/beerinfo', beerInfoRouter);
+app.use('/api/breweries', breweriesRouter);
 // Serve static files
 app.use(express.static('build'));
 
