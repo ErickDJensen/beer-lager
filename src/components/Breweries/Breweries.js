@@ -22,7 +22,7 @@ class Breweries extends Component {
                         <tr>
                             <th>Brewery</th>
                             <th>Location</th>
-                            <th>Website</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -30,7 +30,7 @@ class Breweries extends Component {
                     {this.props.reduxStore.breweries.map(brew => <tr key={brew.id}>
                         <td>{brew.name}</td>
                         <td>{brew.location}</td>
-                        <td> <a href={brew.website} target="_blank">{brew.website}</a></td>
+                        <td> <a href={brew.website} target="_blank" rel="noopener noreferrer">Website</a></td>
                         </tr>)}
                     </tbody>
                 </table>
