@@ -21,8 +21,8 @@ getBeerLog = () => {
             <>
             <div className="container">
                 <h1>Beer Log</h1>
-                <button className="waves-effect waves-light btn-small"><i className="material-icons right">add</i>Log In Beer</button>
-                <table className="centered highlight">
+                <button>Log In Beer</button>
+                <table>
                     <thead>
                         <tr>
                             <th>Brewery</th>
@@ -39,9 +39,9 @@ getBeerLog = () => {
                     <tbody>
                         
                     {this.props.reduxStore.beerLog.map(beer => <tr key={beer.id}>
-                        <td>{beer.brewery}</td>
+                        <td>{beer.brewery_name}</td>
                         <td>{beer.beer_name}</td>
-                        <td>{beer.name}</td>
+                        <td>{beer.beer_style_name}</td>
                         <td>{beer.date}</td>
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
