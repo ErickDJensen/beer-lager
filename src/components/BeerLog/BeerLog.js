@@ -15,6 +15,11 @@ getBeerLog = () => {
     this.props.dispatch({type: 'FETCH_BEERLOG'});
 }
 
+deleteEntry = (id) => {
+    console.log('In deleteEntry', id);
+    this.props.dispatch({ type: 'DELETE_ENTRY', payload: {beer_id: id, user_id: this.props.reduxStore.user.id}});
+}
+
 
     render() {
         return (
@@ -46,7 +51,7 @@ getBeerLog = () => {
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button>Edit</button><div className="divider"/><button>Delete</button></td>
+                        <td><button>Edit</button><div className="divider"/><button onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}
                  
                     </tbody>

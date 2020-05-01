@@ -66,6 +66,7 @@ class LogBeerForm extends Component {
             comments: this.state.comments,
             user_id: this.props.reduxStore.user.id
         }});
+        this.props.history.push('/home');
     }
     
     handleChangeFor = (name, event) => {
