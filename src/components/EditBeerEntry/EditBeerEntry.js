@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './LogBeerForm.css'
+// import './LogBeerForm.css'
 import Form from 'react-bootstrap/Form';
 // import {storage} from '../Firebase';
 
-class LogBeerForm extends Component {
+class EditBeerEntry extends Component {
 
     
 
@@ -26,39 +26,10 @@ class LogBeerForm extends Component {
           this.props.dispatch({type: 'FETCH_BREWERIES'})
       }
     
-    //   handleChange = (event) => {
-    //     if(event.target.files[0]) {
-    //       const image = event.target.files[0];
-    //       this.setState({image});
-    //     }
-    //   }
-    
-    //   handleUpload = () => {
-    //     const {image} = this.state;
-    //     const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    //     uploadTask.on('state_changed',
-    //      (snapshot) => {
-    //       //progress function
-    //       const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-    //       this.setState({progress});
-    //      }, 
-    //      (error) => {
-    //        //error function
-    //        console.log(error);
-    //      }, 
-    //      () => {
-    //        //complete function
-    //        storage.ref('images').child(image.name).getDownloadURL().then(url => {
-    //          console.log(url);
-    //          this.setState({url});
-    //        })
-    //      });
-    //   }
-
     handleClick = (event) => {
         event.preventDefault();
-        console.log('In handleClick', this.state);
-        this.props.dispatch({type: 'POST_BEERINFO', payload: {
+        console.log('In update handleClick', this.state);
+        this.props.dispatch({type: 'PUT_BEERINFO', payload: {
             brewery_name: this.state.brewery,
             beer_style_name: this.state.beerStyle,
             beer_name: this.state.beerName,
@@ -77,12 +48,16 @@ class LogBeerForm extends Component {
         })
     }
 
+    goBack = () => {
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <div>
                 <div>
                     <div className="container">
-                        <h1>Log Beer Form</h1>
+                        <h1>Edit Beer Form</h1>
                         <Form>
                         <div value={this.state.brewery} onChange={(event) => this.handleChangeFor('brewery', event)}>
                         <label>Brewery:</label>
@@ -142,7 +117,7 @@ class LogBeerForm extends Component {
                                 <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400" />
                             </div> */}
                             <div>
-                                <button onClick={this.handleClick}>Submit</button>
+                                <button onClick={this.handleClick}>Submit</button><button onClick={this.goBack}>Go Back</button>
                             </div>
                         </Form>
                     </div>
@@ -156,4 +131,4 @@ const putPropsOnRedux = (reduxStore) => ({
     reduxStore
 })
 
-export default withRouter(connect(putPropsOnRedux)(LogBeerForm));
+export default withRouter(connect(putPropsOnRedux)(EditBeerEntry));

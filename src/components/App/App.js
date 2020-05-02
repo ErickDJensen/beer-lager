@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
@@ -19,7 +21,7 @@ import Favorites from '../Favorites/Favorites';
 import BeerLog from '../BeerLog/BeerLog';
 import BeerInfo from '../BeerInfo/BeerInfo';
 import Breweries from '../Breweries/Breweries';
-
+import EditBeerEntry from '../EditBeerEntry/EditBeerEntry';
 
 import './App.css';
 
@@ -51,6 +53,7 @@ class App extends Component {
             <ProtectedRoute exact path="/favorites" component={Favorites}/>
             <ProtectedRoute exact path="/beerinfo" component={BeerInfo}/>
             <ProtectedRoute exact path="/breweries" component={Breweries}/>
+            <ProtectedRoute exact path="/edit" component={EditBeerEntry}/>
             <Route render={() => <h1>404</h1>} />
           </Switch>
           <Footer />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 
 class Breweries extends Component {
 
@@ -15,9 +16,9 @@ class Breweries extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>Breweries</h1>
-                <table>
+                <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
                             <th>Brewery</th>
@@ -33,7 +34,7 @@ class Breweries extends Component {
                         <td> <a href={brew.website} target="_blank" rel="noopener noreferrer">Website</a></td>
                         </tr>)}
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }

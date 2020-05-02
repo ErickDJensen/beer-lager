@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './BeerLog.css';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 
 class Beer_Log extends Component {
@@ -20,14 +22,23 @@ deleteEntry = (id) => {
     this.props.dispatch({ type: 'DELETE_ENTRY', payload: {beer_id: id, user_id: this.props.reduxStore.user.id}});
 }
 
+updateEntry = (id) => {
+    console.log('In updateEntry', id);
+    this.props.history.push('/edit', id)
+}
+
+goToBeerLog = () => {
+    this.props.history.push('/logbeerform');
+}
+
 
     render() {
         return (
             <>
             <div className="container">
                 <h1>Beer Log</h1>
-                <button>Log In Beer</button>
-                <table>
+                <button type="button" className="btn btn-success btn-lg btn-s" onClick={this.goToBeerLog}>Log A Beer </button>
+                <Table striped bordered hover >
                     <thead>
                         <tr>
                             <th>Brewery</th>
@@ -51,11 +62,11 @@ deleteEntry = (id) => {
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button>Edit</button><div className="divider"/><button onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
+                        <td><button type="button" className="btn btn-info btn-sm" onClick={() => this.updateEntry(beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-info btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}
                  
                     </tbody>
-                </table>
+                </Table>
             </div>
             </>
         )

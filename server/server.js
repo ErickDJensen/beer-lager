@@ -14,7 +14,8 @@ const beerLogRouter = require('./routes/beerLog.router');
 const beerInfoRouter = require('./routes/beerInfo.router');
 const breweriesRouter = require('./routes/breweries.router');
 const postBeerRouter = require('./routes/postBeer.router');
-const deleteRouter = require('./routes/deleteEntry.router');
+const deleteBeerRouter = require('./routes/deleteEntry.router');
+const updateBeerRouter = require('./routes/updateBeer.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,7 +34,8 @@ app.use('/api/beerlog', beerLogRouter);
 app.use('/api/beerinfo', beerInfoRouter);
 app.use('/api/breweries', breweriesRouter);
 app.use('/api/postbeer', postBeerRouter);
-app.use('/api/delete', deleteRouter);
+app.use('/api/delete', deleteBeerRouter);
+app.use('/api/putbeer', updateBeerRouter);
 // Serve static files
 app.use(express.static('build'));
 
