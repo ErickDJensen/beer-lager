@@ -38,7 +38,7 @@ goToBeerLog = () => {
             <>
             <div className="container">
                 <h1>Beer Log</h1>
-                <button type="button" className="btn btn-success btn-lg btn-s" onClick={this.goToBeerLog}>Log A Beer </button>
+                <button type="button" className="btn btn-success btn-lg btn-space" onClick={this.goToBeerLog}>Log A Beer </button>
                 <Table striped bordered hover >
                     <thead>
                         <tr>
