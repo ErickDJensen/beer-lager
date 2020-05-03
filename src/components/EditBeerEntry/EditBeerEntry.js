@@ -18,7 +18,8 @@ class EditBeerEntry extends Component {
         beerName: '',
         date: '',
         rating: '',
-        comments: ''
+        comments: '',
+        
       }
 
       componentDidMount = () => {
@@ -28,7 +29,7 @@ class EditBeerEntry extends Component {
     
     handleClick = (event) => {
         event.preventDefault();
-        console.log('In update handleClick', this.state);
+        console.log('In update handleClick', this.props.reduxStore.update);
         this.props.dispatch({type: 'PUT_BEERINFO', payload: {
             brewery_name: this.state.brewery,
             beer_style_name: this.state.beerStyle,
@@ -36,7 +37,7 @@ class EditBeerEntry extends Component {
             date: this.state.date,
             rating: this.state.rating,
             comments: this.state.comments,
-            user_id: this.props.reduxStore.user.id
+            id: this.props.reduxStore.update,
         }});
         this.props.history.push('/home');
     }

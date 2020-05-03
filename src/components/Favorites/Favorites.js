@@ -8,7 +8,7 @@ class Favorites extends Component {
                 <p>Favorites</p>
                 <>
   <Card>
-    <Card.Img variant="top" src="holder.js/100px180" />
+    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
     <Card.Body>
       <Card.Text>
         Some quick example text to build on the card title and make up the bulk

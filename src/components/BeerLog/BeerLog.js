@@ -22,9 +22,10 @@ deleteEntry = (id) => {
     this.props.dispatch({ type: 'DELETE_ENTRY', payload: {beer_id: id, user_id: this.props.reduxStore.user.id}});
 }
 
-updateEntry = (id) => {
+updateEntry = (event, id) => {
     console.log('In updateEntry', id);
-    this.props.history.push('/edit', id)
+    this.props.dispatch({ type: 'UPDATE_INFO', payload: id})
+    this.props.history.push('/edit')
 }
 
 goToBeerLog = () => {
@@ -62,7 +63,7 @@ goToBeerLog = () => {
                         <td>{beer.rating}</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button type="button" className="btn btn-info btn-sm" onClick={() => this.updateEntry(beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-info btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
+                        <td><button type="button" className="btn btn-info btn-sm" onClick={(event) => this.updateEntry(event, beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-info btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}
                  
                     </tbody>

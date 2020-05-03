@@ -5,7 +5,7 @@ import user from './userReducer';
 import beerLog from './beerLogReducer';
 import beerInfo from './beerInfoReducer';
 import breweries from './breweriesReducer';
-
+import update from './updateReducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,6 +19,7 @@ const rootReducer = combineReducers({
   beerLog,
   beerInfo,
   breweries,
+  update,
 });
 
 export default rootReducer;
