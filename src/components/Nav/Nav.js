@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
+import Navbar from 'react-bootstrap/Navbar';
 
 const Nav = (props) => (
+  <Navbar bg="dark" variant="dark">
   <div className="nav">
     <Link to="/home">
       <h2 className="nav-title">Beer Lager</h2>
@@ -40,6 +42,7 @@ const Nav = (props) => (
       </Link>
     </div>
   </div>
+  </Navbar>
 );
 
 // Instead of taking everything from state, we just want the user

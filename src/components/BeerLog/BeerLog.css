@@ -7,3 +7,30 @@
 .btn-space {
     margin-bottom: 30px;
 }
+
+.home {
+    background-image: url("/images/beer2.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeContainer {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.homeHeading {
+    font-size:130px;
+      text-align: center;
+      font-family: cursive;
+      color: black;
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid white;
+      opacity: 0.6;
+}

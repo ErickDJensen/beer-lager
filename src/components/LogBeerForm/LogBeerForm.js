@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './LogBeerForm.css'
+import './LogBeerForm.css';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 // import {storage} from '../Firebase';
 
 class LogBeerForm extends Component {
@@ -77,15 +78,19 @@ class LogBeerForm extends Component {
         })
     }
 
+    goBack = () => {
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
-            <div>
-                <div>
+            <div className="formImage">
+                <div className="beerForm">
                     <div className="container">
-                        <h1>Log Beer Form</h1>
+                        <h1 className="formHeading">Log Beer Form</h1>
                         <Form>
                         <div value={this.state.brewery} onChange={(event) => this.handleChangeFor('brewery', event)}>
-                        <label>Brewery:</label>
+                        <label className="formLabel">Brewery:</label>
                                 <select>
                                     {this.props.reduxStore.breweries && 
                                     <>
@@ -98,11 +103,11 @@ class LogBeerForm extends Component {
                                 </select>
                             </div>
                             <div value={this.state.beerName} onChange={(event) => this.handleChangeFor('beerName', event)}>
-                                <label>Beer Name:</label>
+                                <label className="formLabel">Beer Name:</label>
                                 <input type="text"></input>
                             </div>
                             <div value={this.state.beerStyle} onChange={(event) => this.handleChangeFor('beerStyle', event)}>
-                                <label>Beer Style:</label>
+                                <label className="formLabel">Beer Style:</label>
                                 <select>
                                     {this.props.reduxStore.beerInfo && 
                                     <>
@@ -115,11 +120,12 @@ class LogBeerForm extends Component {
                                 </select>
                             </div>
                             <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
-                                <label>Date:</label>
+                                <label className="formLabel">Date:</label>
                                 <input type="date" required></input>
                             </div>
-                            <label>Rating:</label>
+                            
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>
+                            <label className="formLabel">Rating:</label>
                                 <input value="5" className="star star-5" id="star-5" type="radio" name="star" />
                                 <label className="star star-5" htmlFor="star-5"></label>
                                 <input value="4" className="star star-4" id="star-4" type="radio" name="star" />
@@ -131,9 +137,9 @@ class LogBeerForm extends Component {
                                 <input value="1" className="star star-1" id="star-1" type="radio" name="star" />
                                 <label className="star star-1" htmlFor="star-1"></label>
                             </div>
-                            <div value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
-                                <label>Comments:</label>
-                                <textarea></textarea>
+                            <div className="comments" value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
+                                <label className="formLabel">Comments:</label>
+                                <textarea rows="3" cols="45"></textarea>
                             </div>
                             {/* <div>
                                 <progress value={this.state.progress} max="100" />
@@ -142,7 +148,7 @@ class LogBeerForm extends Component {
                                 <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400" />
                             </div> */}
                             <div>
-                                <button onClick={this.handleClick}>Submit</button>
+                                <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm"/><Button variant="light" onClick={this.goBack}>Go Back</Button>
                             </div>
                         </Form>
                     </div>

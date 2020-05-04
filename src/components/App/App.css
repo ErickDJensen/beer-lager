@@ -9,7 +9,7 @@ body {
 }
 
 .form {
-    background-color: #dbd5d5;
+    background-color: #f5efef;
     width: 30%;
     height: 250px;
     margin: 20px auto;
@@ -46,3 +46,85 @@ input {
     border-bottom:1px solid #444; 
     cursor: pointer;
 } 
+
+.background {
+    background-image: url("/images/beer.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  th, td {
+      color: black;
+      font-size: 22px;
+      background-color: #ffffff;
+      border: 1px solid white(214, 9, 9);
+      opacity: 0.6;
+  }
+
+  .heading {
+      font-size: 130px;
+      text-align: center;
+      font-family: cursive;
+      color: black;
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid white;
+      opacity: 0.6;
+  }
+
+  div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+  }
+
+  .container {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .beerForm {
+      margin: 0 auto;
+      width: 400px;
+      
+  }
+
+  .formImage {
+    background-image: url("/images/beerclose.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .dividerForm{
+    width:20px;
+    height:auto;
+    display:inline-block;
+  }
+
+  .formLabel {
+    font-size: 19px;
+    font-weight: bold;
+    color: whitesmoke;
+  }
+
+  .formHeading {
+      color: black;
+      font-family: cursive;
+      font-size: 60px;
+  }
+
+  .formHeadingEdit {
+    color: black;
+    font-family: cursive;
+    font-size: 58px;
+  }
+
+  .comments {
+    display: inline-block;
+    width: 140px;
+  }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './LoginPage.css';
 class LoginPage extends Component {
   state = {
     username: '',
