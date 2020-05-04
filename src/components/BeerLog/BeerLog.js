@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './BeerLog.css';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 
 

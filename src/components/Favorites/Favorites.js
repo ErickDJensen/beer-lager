@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
+import './Favorites.css';
 
 class Favorites extends Component {
     render() {
@@ -8,7 +9,7 @@ class Favorites extends Component {
                 <p>Favorites</p>
                 <>
   <Card>
-    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+    <Card.Img variant="top" className = "image" src="./images/coffee.jpg" />
     <Card.Body>
       <Card.Text>
         Some quick example text to build on the card title and make up the bulk
@@ -24,7 +25,7 @@ class Favorites extends Component {
         of the card's content.
       </Card.Text>
     </Card.Body>
-    <Card.Img variant="bottom" src="" />
+    <Card.Img className = "image" variant="bottom" src="./images/coffee.jpg" />
   </Card>
 </>
             </div>

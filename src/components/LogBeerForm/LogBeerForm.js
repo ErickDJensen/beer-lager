@@ -116,7 +116,7 @@ class LogBeerForm extends Component {
                             </div>
                             <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
                                 <label>Date:</label>
-                                <input type="date"></input>
+                                <input type="date" required></input>
                             </div>
                             <label>Rating:</label>
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>

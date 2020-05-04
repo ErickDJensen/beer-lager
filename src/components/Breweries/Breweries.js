@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
+import './Breweries.css';
 
 class Breweries extends Component {
 
@@ -16,6 +17,7 @@ class Breweries extends Component {
 
     render() {
         return (
+            <div className="background">
             <div className="container">
                 <h1>Breweries</h1>
                 <Table striped bordered hover size="sm">
@@ -35,6 +37,7 @@ class Breweries extends Component {
                         </tr>)}
                     </tbody>
                 </Table>
+                </div>
             </div>
         )
     }

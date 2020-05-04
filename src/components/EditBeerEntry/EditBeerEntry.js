@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import './LogBeerForm.css'
+import './EditBeerEntry.css'
 import Form from 'react-bootstrap/Form';
 // import {storage} from '../Firebase';
 
@@ -55,7 +55,7 @@ class EditBeerEntry extends Component {
 
     render() {
         return (
-            <div>
+            <div className="background">
                 <div>
                     <div className="container">
                         <h1>Edit Beer Form</h1>
