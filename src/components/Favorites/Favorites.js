@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './Favorites.css';
 
 class Favorites extends Component {
+
+  componentDidMount() {
+    this.getFavorites();
+}
+
+getFavorites = () => {
+    console.log('In getFavorites');
+    this.props.dispatch({type: 'GET_FAVORITES'});
+}
+
+
     render() {
         return (
             <div>
                 <p>Favorites</p>
                 <>
+                {JSON.stringify(this.props.reduxStore.favorites)}
   <Card>
     <Card.Img variant="top" className = "image" src="./images/coffee.jpg" />
     <Card.Body>
@@ -33,4 +47,8 @@ class Favorites extends Component {
     }
 }
 
-export default Favorites
+const putPropsOnRedux = (reduxStore) => ({
+  reduxStore
+})
+
+export default withRouter(connect(putPropsOnRedux)(Favorites));
