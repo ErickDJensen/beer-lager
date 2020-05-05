@@ -61,7 +61,7 @@ goToBeerLog = () => {
                         <td>{beer.beer_style_name}</td>
                         <td>{beer.date}</td>
                         <td>{beer.rating} / 5</td>
-                        <td>{beer.comments}</td>
+                        <td className="tableComments">{beer.comments}</td>
                         <td></td>
                         <td><button type="button" className="btn btn-success btn-sm" onClick={(event) => this.updateEntry(event, beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-success btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}

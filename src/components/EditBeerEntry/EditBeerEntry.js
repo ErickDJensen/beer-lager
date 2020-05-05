@@ -110,7 +110,7 @@ class EditBeerEntry extends Component {
                             </div>
                             <div className="comments" value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
                                 <label className="formLabel">Comments:</label>
-                                <textarea rows="3" cols="45"></textarea>
+                                <textarea rows="3" cols="45" maxlength = "500"></textarea>
                             </div>
                             {/* <div>
                                 <progress value={this.state.progress} max="100" />

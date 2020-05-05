@@ -10,7 +10,7 @@
 
 .home {
     background-image: url("/images/beer2.jpg");
-    height: 2000px;
+    height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,4 +37,13 @@
     width: 520px;
     height: 200px;
     margin-left: 600px;
+}
+
+table {
+    width:100%
+  }
+
+.tableComments {
+    overflow-wrap: anywhere;
+    width: 25em;
 }
