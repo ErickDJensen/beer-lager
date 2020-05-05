@@ -11,14 +11,14 @@
 
 .nav {
   overflow: hidden;
-  /* background-color: yellow; */
+  background-color: rgb(51, 17, 17);
   
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  /* background-color: yellow; */
+  background-color: rgb(51, 17, 17);
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -32,9 +32,9 @@
   outline:0;
 }
 
-/* .nav-link:hover {
-  background-color: rgb(54, 49, 49);
-} */
+.nav-link:hover {
+  background-color: whitesmoke;
+}
 
 .nav-right {
   float: right;

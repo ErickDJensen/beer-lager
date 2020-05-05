@@ -73,6 +73,9 @@ input {
       background-color: #ffffff;
       border: 1px solid white;
       opacity: 0.6;
+      width: 520px;
+    height: 170px;
+    margin-left: 270px;
   }
 
   div.transbox p {
@@ -88,12 +91,13 @@ input {
   .beerForm {
       margin: 0 auto;
       width: 400px;
+      padding-top: 130px;
       
   }
 
   .formImage {
     background-image: url("/images/beerclose.jpg");
-    height: 100%;
+    height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

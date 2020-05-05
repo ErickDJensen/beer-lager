@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './BeerLog.css';
+
 // import Button from 'react-bootstrap/Button';
 
 
@@ -47,7 +48,7 @@ goToBeerLog = () => {
                             <th>Date</th>
                             <th>Rating</th>
                             <th>Comments</th>
-                            <th>Picture</th>
+                            <th></th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -62,7 +63,7 @@ goToBeerLog = () => {
                         <td>{beer.rating} / 5</td>
                         <td>{beer.comments}</td>
                         <td></td>
-                        <td><button type="button" className="btn btn-info btn-sm" onClick={(event) => this.updateEntry(event, beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-info btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
+                        <td><button type="button" className="btn btn-success btn-sm" onClick={(event) => this.updateEntry(event, beer.id)}>Edit</button><div className="divider"/><button type="button" className="btn btn-success btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}
                  
                     </tbody>
