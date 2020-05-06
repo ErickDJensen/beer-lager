@@ -1,8 +1,9 @@
 .loginPicture {
     background-image: url("/images/beerhall.jpg");
-    height: 10000px;
+    height: 800px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 50px;
     }
