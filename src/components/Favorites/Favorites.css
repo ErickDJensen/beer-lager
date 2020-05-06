@@ -1,3 +1,8 @@
-.image {
-    width: 320px;
+.starpic {
+    height: 50px;
+}
+
+#favoritesCell {
+    vertical-align: top;
+    text-align: left;
 }

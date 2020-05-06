@@ -1,8 +1,8 @@
-.registrationPicture {
-    background-image: url("/images/brewery.jpg");
-    height: 800px;
+.loginPicture {
+    background-image: url("/images/beerhall.jpg");
+    height: 10000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    }

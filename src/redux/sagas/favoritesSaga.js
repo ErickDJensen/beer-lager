@@ -11,10 +11,10 @@ function* fetchFavoritesSaga() {
     try {
         const response = yield axios.get('/api/favorites');
         yield put({ type: 'SET_FAVORITES', payload: response.data });
-        console.log('in fetchBeerLogSaga', response.data)
+        console.log('in fetchFavoritesSaga', response.data)
     }
     catch (error) {
-        console.log('Error in fetchBeerLogSaga', error);
+        console.log('Error in fetchFavoritesSaga', error);
     }
 }
 

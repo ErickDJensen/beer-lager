@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './LoginPage.css';
+
 class LoginPage extends Component {
   state = {
     username: '',
@@ -30,7 +32,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="loginPicture"> 
         {this.props.errors.loginMessage && (
           <h2
             className="alert"

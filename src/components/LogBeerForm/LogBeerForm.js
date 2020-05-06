@@ -139,7 +139,7 @@ class LogBeerForm extends Component {
                             </div>
                             <div className="comments" value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
                                 <label className="formLabel">Comments:</label>
-                                <textarea rows="3" cols="45" maxlength = "500" placeholder="Enter comments here"></textarea>
+                                <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here"></textarea>
                             </div>
                             {/* <div>
                                 <progress value={this.state.progress} max="100" />
