@@ -36,7 +36,7 @@ app.use('/api/breweries', breweriesRouter);
 app.use('/api/postbeer', postBeerRouter);
 app.use('/api/delete', deleteBeerRouter);
 app.use('/api/putbeer', updateBeerRouter);
-app.use('/api/favorites', favoritesRouter)
+app.use('/api/favorites', favoritesRouter);
 // Serve static files
 app.use(express.static('build'));
 

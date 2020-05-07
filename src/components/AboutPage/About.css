@@ -1,0 +1,15 @@
+.about {
+    background-image: url("/images/cheers.jpg");
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    }
+
+.cheers {
+    text-align: center;
+    font-size: 70px;
+    font-family: cursive;
+}

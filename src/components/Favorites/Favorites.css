@@ -1,3 +1,13 @@
+.favorite {
+    background-image: url("/images/favbeers.jpg");
+    height: 10000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .starpic {
     height: 50px;
 }

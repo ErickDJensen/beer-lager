@@ -22,6 +22,7 @@ class EditBeerEntry extends Component {
         
       }
 
+
       componentDidMount = () => {
           this.props.dispatch({type: 'FETCH_BEERINFO'})
           this.props.dispatch({type: 'FETCH_BREWERIES'})
@@ -130,7 +131,8 @@ class EditBeerEntry extends Component {
 }
 
 const putPropsOnRedux = (reduxStore) => ({
-    reduxStore
+    reduxStore,
+    beerLog: reduxStore.beerLog,
 })
 
 export default withRouter(connect(putPropsOnRedux)(EditBeerEntry));

@@ -19,7 +19,7 @@ getFavorites = () => {
     render() {
         return (
           <>
-            <div className="home">
+            <div className="favorite">
             <div className="homeContainer">
                 <h1 className="homeHeading">Favorites</h1>
                 <table className="table">
