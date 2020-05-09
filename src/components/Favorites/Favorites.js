@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './Favorites.css';
-// import Card from 'react-bootstrap/Card'
+const moment = require('moment');
+
 
 class Favorites extends Component {
 
@@ -40,7 +41,7 @@ getFavorites = () => {
                         <td>{beer.brewery_name}</td>
                         <td>{beer.beer_name}</td>
                         <td>{beer.beer_style_name}</td>
-                        <td>{beer.date}</td>
+                        <td>{moment(beer.date).format("MMM Do YYYY")}</td>
                         <td id="favoritesCell"><img className="starpic" src="../images/fivestar.jpeg" alt="stars"></img></td>
                         <td className="tableComments">{beer.comments}</td>
                         </tr>)}

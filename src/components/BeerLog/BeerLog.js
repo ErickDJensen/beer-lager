@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './BeerLog.css';
-
-// import Button from 'react-bootstrap/Button';
+const moment = require('moment');
 
 
 class Beer_Log extends Component {
@@ -59,7 +58,7 @@ goToBeerLog = () => {
                         <td>{beer.brewery_name}</td>
                         <td>{beer.beer_name}</td>
                         <td>{beer.beer_style_name}</td>
-                        <td>{beer.date}</td>
+                        <td>{moment(beer.date).format("MMM Do YYYY")}</td>
                         <td>{beer.rating} out of 5</td>
                         <td className="tableComments">{beer.comments}</td>
                         <td></td>

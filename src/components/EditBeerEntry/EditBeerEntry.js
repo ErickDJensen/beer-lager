@@ -3,16 +3,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import {storage} from '../Firebase';
 
 class EditBeerEntry extends Component {
 
     
 
     state = {
-        // image: null,
-        // url: '',
-        // progress: 0,
         brewery: '',
         beerStyle: '',
         beerName: '',
@@ -95,7 +91,6 @@ class EditBeerEntry extends Component {
                                 <label className="formLabel">Date:</label>
                                 <input type="date"></input>
                             </div>
-                            
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>
                             <label className="formLabel">Rating:</label>
                                 <input value="5" className="star star-5" id="star-5" type="radio" name="star" />
@@ -113,12 +108,6 @@ class EditBeerEntry extends Component {
                                 <label className="formLabel">Comments:</label>
                                 <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here"></textarea>
                             </div>
-                            {/* <div>
-                                <progress value={this.state.progress} max="100" />
-                                <input type="file" onChange={this.handleChange} />
-                                <button onClick={this.handleUpload}>Upload</button>
-                                <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400" />
-                            </div> */}
                             <div>
                             <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm"/><Button variant="light" onClick={this.goBack}>Go Back</Button>
                             </div>
