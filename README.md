@@ -6,8 +6,9 @@
 This app allows a user to log in beer that they have tried at different local breweries. The home page displays all of the beers that have been logged. The display shows the brewery, beer name, beer style, date, rating, comments and then gives the user buttons to either update that entry or delete that entry. From the home screen the user can click the Log A Beer button to go to the Log Beer form, from there the user can make a beer entry with options for brewery, beer name, beer style, date, rating, and comments. Once the form is completed the user can click Submit to confirm the entry. If the user would like not to make an entry they can click the go back button. This app also has favorites page that displays all beers that have gotten a 5 out of 5 rating, a beer info page that displays a table of beer styles and discription, and a breweries page that lists local breweries with their location and a link to their website.
 
 ## Screen Shot
-![](public/images/)
-![](public/images/)
+![](public/images/homepage.jpeg)
+![](public/images/formpage.jpeg)
+![](public/images/breweriespage.jpeg)
 
 ## Prerequisites
 - React
