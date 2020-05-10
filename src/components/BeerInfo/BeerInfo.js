@@ -10,6 +10,7 @@ class BeerInfo extends Component {
         this.getBeerInfo();
     }
     
+    //function to get beer style info from database to display on the beer info page
     getBeerInfo = () => {
         console.log('In getBeerInfo');
         this.props.dispatch({type: 'FETCH_BEERINFO'});

@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to get all 5 star rated beers for favorites page
 router.get('/', (req, res) => {
     console.log('Favorites GET arrived at server', req.user.id);
     let param = req.user.id;

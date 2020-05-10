@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to update an entry on the beer log home page and database
 router.put('/',  (req, res) => {
     // Req.body is the survey data object received from client
     let newEntry = req.body;

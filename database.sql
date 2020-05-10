@@ -1,10 +1,120 @@
 
--- USER is a reserved keyword with Postgres
--- You must use double quotes in every query that user is in:
--- ex. SELECT * FROM "user";
--- Otherwise you will have errors!
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+CREATE TABLE "beer_styles" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR (100) NOT NULL,
+    "description" VARCHAR (1000) NOT NULL
+);
+
+CREATE TABLE "brewery" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR (100) NOT NULL,
+    "location" VARCHAR (1000) NOT NULL,
+    "website" VARCHAR (1000) NOT NULL
+);
+
+CREATE TABLE "user_input" (
+    "id" SERIAL PRIMARY KEY,
+    "brewery_id" integer REFERENCES "brewery",
+    "brewery_name" VARCHAR (100) NOT NULL,
+    "beer_style_id" integer REFERENCES "beer_styles",
+    "beer_style_name" VARCHAR (100) NOT NULL,
+    "beer_name" VARCHAR (1000) NOT NULL,
+    "date" DATE,
+    "rating" integer,
+    "comments" VARCHAR (1000) NOT NULL,
+    "picture" VARCHAR (100),
+    "user_id" VARCHAR (100)
+);
+
+INSERT INTO "beer_styles" ("name", "description")
+VALUES ('Pale Ale','Pale ales are usually hoppy but carry a lower alcohol content than IPAs. Most types of pale ale, which can include American amber ale, American pale ale, blonde ale and English pale ale, are malty, medium-bodied and easy to drink.'),
+('Dark Lager','Dark lagers (also known as Dunkel or dunkel-style lagers) range in color from dark brown to black and range in alcohol from 4.5-5.5%. At their best, these beers combine the dryish chocolate or licorice notes associated with the use of dark roasted malts and the roundness and crispness of a lager.'),
+('Brown Ale','Brown ale is a style of beer with a dark amber or brown colour. The term was first used by London brewers in the late 17th century to describe their products, such as mild ale, though the term has a rather different meaning today. 18th century brown ales were lightly hopped and brewed from 100% brown malt.'),
+('India Pale Ale','India Pale Ales (IPAs), which encompass numerous styles of beer, get their characteristics largely from hops and herbal, citrus or fruity flavors. They can be bitter and contain high alcohol levels, though the final product depends on the variety of hops used. Some IPAs can taste like pure citrus, while others are strong and bitter. Prominent IPA styles include West Coast IPA, British IPA and New England Style IPA.'),
+('Wheat Beer','Wheat beers rely on wheat for the malt ingredient, which gives the beverage a light color and alcohol level that makes it perfect for kicking back with during the summer and for combining it with fruit, like a slice of lemon or orange. Some wheat beers, with their funky and tangy flavors, fall under Belgian-style brews while the ones made in the U.S. have a light flavor that recalls bread.'),
+('Belgian Style','Belgium’s rich beer culture has poured into the U.S. over the years, giving enthusiasts on this side of the Atlantic a deep appreciation for the wide variety of Belgian-style flavors. Belgian beers span pale ales, dark ales, fruity beers and sour ales. WebstaruantStore, which provides equipment and information for restaurants, bars and other establishments, generally defines Belgian-style beers as carrying fruity, spicy and sweet flavors with a high alcohol content and low bitterness.'),
+('Hybrid','These beers have been dubbed hybrids because brewers implement a hybrid method of fermenting those beer; for example they will use lager yeast fermented at ale (warm) temperatures, or they will ferment a beer with ale yeast but at lager (cool) temperatures.'),
+('Porter','Traditional porters, which can trace their roots to the United Kingdom, are dark in color like stouts due to common ingredients like chocolate or other dark-roasted malts. Porters tend to taste less like coffee than stouts, with more of a chocolatey feel.'),
+('Stout','A dark beer, the flavor of stouts depend on where they come from. Sweet stouts largely originate from Ireland and England and are known for their low bitterness. In fact, Ireland’s Guinness brand produces some of the world’s most recognizable stout beer.'),
+('Bock','Bock is a bottom fermenting lager and typically spends extra time in cold storage during the winter months to smooth the intense flavors that develop during the brewing process. ... Stronger than a typical lager, bock is dark amber in color with robust malt flavors and very light hoppiness.'),
+('Wild/Sour','Sour beer has shot up in popularity in the U.S. over the last few years, becoming an enticing beverage to people looking to branch out their beer palates or to those wanting to try something new. Highly tart, sour beers can take on many forms, including Belgian-style Lambic beer, fruity Flanders ale and lemony Berliner Weisse beer. With the addition of fruits like cherry, raspberry or peach, sour beers marry sweet and sour to make beer flavors completely unlike the lagers and IPAs of yore.'),
+('Pilsner','Pilsners, which originate from the Czech Republic, fall under the lager category. German pilsners give off a pale gold color and crisp flavor, while Czech pilsners are a little darker with higher bitterness.'),
+('Specialty','Specialty beers are typically regular beers brewed to a classic style (such as Porter, Stout, or Pale Ale) but with some new flavor added. Others beers in this category are made from unusual fermented foods.');
+
+INSERT INTO "brewery" ("name", "location", "website")
+VALUES ('10K Brewing ', 'Anoka', 'http://10kbrew.com/'),
+('56 Brewing', 'Minneapolis', 'http://www.56brewing.com/'),
+('612 Brew', 'Minneapolis', 'http://www.612brew.com/'),
+('Able Seedhouse and Brewery ', 'Minneapolis', 'http://ablebeer.com/'),
+('August Schell Brewing Co.','New Ulm','http://www.schellsbrewery.com/'),
+('Badger Hill Brewing Co.','Shakopee','http://www.badgerhillbrewing.com/'),
+('Bad Habit Brewing Co.','St. Joseph','http://www.badhabitbeer.com/'),
+('Bad Weather Brewing Co.','St. Paul','http://www.badweatherbrewery.com/'),
+('Bang Brewing ','St. Paul','http://bangbrewing.com/'),
+('Bank Brewing Co.','Hendricks','http://www.bankbrewing.com/'),
+('Bauhaus Brew Labs','Minneapolis','http://bauhausbrewlabs.com/'),
+('Beaver Island Brewing','St Cloud','http://beaverislandbrew.com/'),
+('Bemidji Brewing Co.','Bemidji','http://bemidjibeer.com/'),
+('Bent Brewstillery','Roseville','http://www.bentbrewstillery.com/'),
+('Bent Paddle Brewing Co.','Duluth','http://www.bentpaddlebrewing.com/'),
+('Big Axe Brewing Company','Nisswa','http://www.bigwoodbrewery.com/'),
+('Big Wood Brewery','White Bear Lake','http://www.bigwoodbrewery.com/'),
+('Blacklist Brewing Company','Duluth','http://www.blacklistbrewing.com/'),
+('Boom Island Brewing Co.','Minneapolis','http://boomislandbrewing.com/'),
+('Borealis Fermentery','Knife River','http://borealisfermentery.com/'),
+('Brau Brothers Brewing Co. ','Marshall','http://www.braubeer.com/'),
+('Burning Brothers Brewing Co.','St. Paul','http://www.burnbrosbrew.com/'),
+('Castle Danger Brewery','Two Harbors','http://www.castledangerbrewery.com/'),
+('Dangerous Man Brewing Co.','Minneapolis','http://www.dangerousmanbrewing.com/'),
+('Eastlake Brewery & Tavern','Minneapolis','http://www.eastlakemgm.com/'),
+('Enki Brewing Co.','Victoria','http://www.enkibrewing.com/'),
+('Excelsior Brewing Co.','Excelsior','http://excelsiorbrew.com/'),
+('Fair State Brewing Cooperative ','Minneapolis','http://fairstate.coop/'),
+('Flat Earth Brewing Co.','St. Paul','http://www.flatearthbrewing.com/'),
+('Fulton Brewing Co.','Minneapolis','http://www.fultonbeer.com/'),
+('Goat Ridge Brewing Co.','New London','http://www.goatridgebrewing.com/'),
+('Gull Dam Brewing','Nisswa','http://gulldambrewing.com/'),
+('Hammerheart Brewinging Co. ','Lino Lakes','http://www.hammerheartbrewing.com/'),
+('Harriet Brewing','Minneapolis','http://www.harrietbrewing.com/'),
+('Hayes Public House','Buffalo','http://www.hayespublichouse.com/'),
+('Indeed Brewing Co.','Minneapolis','http://www.indeedbrewing.com/'),
+('Insight Brewing','Minneapolis','http://www.insightbrewing.com/'),
+('Jack Pine Brewery','Baxter','http://jackpinebrewery.com/'),
+('Junkyard Brewing Co.','Moorhead','http://www.junkyardbeer.com/'),
+('Kinney Creek Brewery','Rochester','http://www.kinneycreekbrewery.com/'),
+('Lake Superior Brewing Co.','Duluth','http://www.lakesuperiorbrewing.com/'),
+('Lazy Loon Brewing ','Victoria','http://www.lazyloonbrewing.com/'),
+('Lift Bridge Brewery','Stillwater','http://www.liftbridgebrewery.com/'),
+('LTD Brewing Co.','Hopkins','http://www.ltdbrewing.com/'),
+('Lucid Brewing','Minnetonka','http://www.lucidbrewing.com/'),
+('Lupine Brewing Company','Delano','http://lupinebrewing.com/'),
+('Lupulin Brewing Co.','Big Lake','http://lupinebrewing.com/'),
+('LynLake Brewery ','Minneapolis','http://www.lynlakebrewery.com/'),
+('Mankato Brewery','Mankato','http://mankatobrewery.com/'),
+('Mantorville Brewing Co.','Mantorville','http://www.mantorvillebeer.com/'),
+('Maple Island Brewing Co.','Stillwater','http://www.mapleislandbrewing.com/'),
+('NorthGate','Minneapolis','http://www.northgatebrew.com/'),
+('Olvalde Farm and Brewing Company','Rollingstone','http://olvalde.com/'),
+('Pryes Brewing','Minnetonka','http://www.pryesbrewing.com/'),
+('Schram Vineyard Winery & Brewery','Waconia','http://www.schramvineyards.com/p/home.html'),
+('Sidhe Brewing Co.','St. Paul','http://www.sidhebrewing.com/'),
+('Sisyphus Brewing','Minneapolis','http://www.sisyphusbrewing.com/'),
+('Sociable Cider Werks','Minneapolis','http://sociablecider.com/'),
+('South Fork Brewing Co.','Delano','http://southforkbrewingcompany.com/'),
+('Spilled Grain Brewhouse','Annandale','http://www.spilledgrainbrewhouse.com/'),
+('Steel Toe Brewing Co.','St. Louis Park','http://www.steeltoebrewing.com/'),
+('Summit Brewing Co.','St. Paul','http://www.summitbrewing.com/'),
+('Surly Brewing Co.','Minneapolis','http://www.surlybrewing.com/'),
+('Take 16 Brewing','Luvurne','http://www.surlybrewing.com/'),
+('Third Street Brewhouse','Cold Spring','http://www.thirdstreetbrewhouse.com/'),
+('Tin Whiskers Brewing','St. Paul','http://www.twbrewing.com/'),
+('Urban Growler Brewing C0.','St. Paul','http://www.urbangrowlerbrewing.com/'),
+('Vine Park Brewing Co.','St. Paul','http://www.vinepark.com/'),
+('Voyageur Brewing Co.','Grand Marais','http://www.voyageurbrewing.com/'),
+('Wabasha Brewing Co.','St. Paul','http://www.wabashabrewing.com/');

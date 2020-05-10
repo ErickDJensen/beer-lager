@@ -15,36 +15,40 @@ class EditBeerEntry extends Component {
         date: this.props.details.date,
         rating: this.props.details.rating,
         comments: this.props.details.comments,
-        
-      }
-    
+
+    }
 
 
 
 
-      componentDidMount = () => {
-          this.props.dispatch({type: 'FETCH_BEERINFO'})
-          this.props.dispatch({type: 'FETCH_BREWERIES'})
-      }
-    
+//fetches beer style and breweries list for the drop down menus
+    componentDidMount = () => {
+        this.props.dispatch({ type: 'FETCH_BEERINFO' })
+        this.props.dispatch({ type: 'FETCH_BREWERIES' })
+    }
+
+    //function that gathers data that has been updated and then updates the database
     handleClick = (event) => {
         event.preventDefault();
         console.log('In update handleClick', this.props.reduxStore.details.id);
-        if(this.refs.rating.value >5 || this.refs.rating.value < 1){
+        if (this.refs.rating.value > 5 || this.refs.rating.value < 1) {
             alert('rating must be between 1 and 5')
         }
-        this.props.dispatch({type: 'PUT_BEERINFO', payload: {
-            brewery_name: this.state.brewery_name,
-            beer_style_name: this.state.beer_style_name,
-            beer_name: this.state.beer_name,
-            date: this.state.date,
-            rating: this.state.rating,
-            comments: this.state.comments,
-            id: this.props.reduxStore.details.id,
-        }});
+        this.props.dispatch({
+            type: 'PUT_BEERINFO', payload: {
+                brewery_name: this.state.brewery_name,
+                beer_style_name: this.state.beer_style_name,
+                beer_name: this.state.beer_name,
+                date: this.state.date,
+                rating: this.state.rating,
+                comments: this.state.comments,
+                id: this.props.reduxStore.details.id,
+            }
+        });
         this.props.history.push('/home');
     }
-    
+
+    //function that takes in the info from each input
     handleChangeFor = (name, event) => {
         this.setState({
             ...this.state,
@@ -52,6 +56,7 @@ class EditBeerEntry extends Component {
         })
     }
 
+    //function that takes you back to the home page
     goBack = () => {
         this.props.history.push('/home')
     }
@@ -63,14 +68,14 @@ class EditBeerEntry extends Component {
                     <div className="container">
                         <h1 className="formHeadingEdit">Edit Beer Form</h1>
                         <Form>
-                        <div defaultValue={this.state.brewery_name} onChange={(event) => this.handleChangeFor('brewery_name', event)}>
-                        <label className="formLabel">Brewery:</label>
+                            <div defaultValue={this.state.brewery_name} onChange={(event) => this.handleChangeFor('brewery_name', event)}>
+                                <label className="formLabel">Brewery:</label>
                                 <select value={this.state.brewery_name}>
-                                    {this.props.reduxStore.breweries && 
-                                    <>
-                                    <option value="" defaultValue="Choose your option">Choose your option</option>
-                                        {this.props.reduxStore.breweries.map(beer => 
-                                            <option key={beer.id}value={beer.name}>{beer.name}</option>
+                                    {this.props.reduxStore.breweries &&
+                                        <>
+                                            <option value="" defaultValue="Choose your option">Choose your option</option>
+                                            {this.props.reduxStore.breweries.map(beer =>
+                                                <option key={beer.id} value={beer.name}>{beer.name}</option>
                                             )}
                                         </>
                                     }
@@ -83,11 +88,11 @@ class EditBeerEntry extends Component {
                             <div value={this.state.beer_style_name} onChange={(event) => this.handleChangeFor('beer_style_name', event)}>
                                 <label className="formLabel">Beer Style:</label>
                                 <select value={this.state.beer_style_name}>
-                                    {this.props.reduxStore.beerInfo && 
-                                    <>
-                                    <option value="" defaultValue="Choose your option">Choose your option</option>
-                                        {this.props.reduxStore.beerInfo.map(beer => 
-                                            <option key={beer.id}value={beer.name}>{beer.name}</option>
+                                    {this.props.reduxStore.beerInfo &&
+                                        <>
+                                            <option value="" defaultValue="Choose your option">Choose your option</option>
+                                            {this.props.reduxStore.beerInfo.map(beer =>
+                                                <option key={beer.id} value={beer.name}>{beer.name}</option>
                                             )}
                                         </>
                                     }
@@ -98,15 +103,15 @@ class EditBeerEntry extends Component {
                                 <input type="text" value={moment(this.state.date).format("MMM Do YYYY")}></input>
                             </div>
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>
-                            <label className="formLabel">Rating:</label>
-                            <input type="number" name="rating" ref="rating" min="1" max="5" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}></input>
+                                <label className="formLabel">Rating:</label>
+                                <input type="number" name="rating" ref="rating" min="1" max="5" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}></input>
                             </div>
                             <div className="comments" value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
                                 <label className="formLabel">Comments:</label>
-                                <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here" value={this.state.comments}></textarea>
+                                <textarea rows="3" cols="45" maxLength="500" placeholder="Enter comments here" value={this.state.comments}></textarea>
                             </div>
                             <div>
-                            <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm"/><Button variant="light" onClick={this.goBack}>Go Back</Button>
+                                <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm" /><Button variant="light" onClick={this.goBack}>Go Back</Button>
                             </div>
                         </Form>
                     </div>

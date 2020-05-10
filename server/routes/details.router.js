@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to get details for one beer log entry
 router.get('/', (req, res) => {
     console.log('Details info GET arrived at server', req.query);
     const id = req.query.q;

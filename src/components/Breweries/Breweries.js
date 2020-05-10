@@ -9,6 +9,7 @@ class Breweries extends Component {
         this.getBreweries();
     }
     
+    //function that gets the list of breweries from the server/database
     getBreweries = () => {
         console.log('In getBreweries');
         this.props.dispatch({type: 'FETCH_BREWERIES'});

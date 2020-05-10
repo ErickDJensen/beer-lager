@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to get beer style info for beer style page
 router.get('/', (req, res) => {
     console.log('Beer info GET arrived at server');
     const queryText = `SELECT * FROM "beer_styles"

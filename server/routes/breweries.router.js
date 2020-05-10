@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to show breweries on breweries page
 router.get('/', (req, res) => {
     console.log('Brewries info GET arrived at server');
     const queryText = `SELECT * FROM "brewery"

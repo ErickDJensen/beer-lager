@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to show beer log on the home screen
 router.get('/', (req, res) => {
     console.log('Beer log GET arrived at server', req.user.id);
     let param = req.user.id;

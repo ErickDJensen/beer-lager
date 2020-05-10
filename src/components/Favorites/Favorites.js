@@ -11,6 +11,7 @@ class Favorites extends Component {
     this.getFavorites();
 }
 
+//function that gets all favorite beers from the server/database
 getFavorites = () => {
     console.log('In getFavorites');
     this.props.dispatch({type: 'GET_FAVORITES'});
@@ -34,9 +35,7 @@ getFavorites = () => {
                             <th>Comments</th>
                         </tr>
                     </thead>
-
                     <tbody>
-                        
                     {this.props.reduxStore.favorites.map(beer => <tr key={beer.id}>
                         <td>{beer.brewery_name}</td>
                         <td>{beer.beer_name}</td>

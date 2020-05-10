@@ -11,22 +11,26 @@ componentDidMount() {
     this.getBeerLog();
 }
 
+//function to get the beer log from the server/database to display on the beer log home page
 getBeerLog = () => {
     console.log('In getLog');
     this.props.dispatch({type: 'FETCH_BEERLOG'});
 }
 
+//function to delete an entry from the beer log home page and database
 deleteEntry = (id) => {
     console.log('In deleteEntry', id);
     this.props.dispatch({ type: 'DELETE_ENTRY', payload: {beer_id: id, user_id: this.props.reduxStore.user.id}});
 }
 
+//function to update a beer entry on the beer log page. Also updates the database
 updateEntry = (beer) => {
     console.log('In updateEntry', beer);
     this.props.dispatch({ type: 'SET_ENTRYDETAILS', payload: beer})
     this.props.history.push('/edit')
 }
 
+//function that activates after button click to go to the log beer form page
 goToBeerLog = () => {
     this.props.history.push('/logbeerform');
 }
@@ -64,7 +68,6 @@ goToBeerLog = () => {
                         <td></td>
                         <td><button type="button" className="btn btn-success btn-sm" onClick={(event) => this.updateEntry(beer)}>Edit</button><div className="divider"/><button type="button" className="btn btn-success btn-sm" onClick={() => this.deleteEntry(beer.id)}>Delete</button></td>
                         </tr>)}
-                 
                     </tbody>
                 </table>
             </div>

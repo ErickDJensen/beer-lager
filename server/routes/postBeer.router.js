@@ -2,9 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//route to post a new entry for the beer log home screen
 router.post('/',  (req, res) => {
     //Req.body is the survey data object received from client
-    // let newEntry = req.body;
     console.log(`adding beer log entry`, req.body);
     //Query text to establish the data being sent to the DB
     let queryText = `INSERT INTO "user_input" ("brewery_name", "beer_style_name", "beer_name", "date", "rating", "comments", "user_id")
