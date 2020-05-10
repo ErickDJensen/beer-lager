@@ -3,8 +3,7 @@ import axios from 'axios';
 
 
 function* getDetailsSaga(action) {
-    // console.log('In getDetailsSaga', action.payload)
-    yield takeEvery('GET_DETAILS', getEntryDetailsSaga);
+    yield takeEvery('UPDATE_INFO', getEntryDetailsSaga);
 }
 
 

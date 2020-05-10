@@ -9,7 +9,7 @@ import postBeerSaga from './postbeerSaga';
 import deleteEntrySaga from './deleteEntrySaga';
 import updateBeerSaga from './updateBeerSaga';
 import favoritesSaga from './favoritesSaga';
-
+import getDetailsSaga from './getDetailsSaga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -29,5 +29,6 @@ export default function* rootSaga() {
     deleteEntrySaga(),
     updateBeerSaga(),
     favoritesSaga(),
+    getDetailsSaga(),
   ]);
 }

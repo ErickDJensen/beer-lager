@@ -5,7 +5,7 @@ import user from './userReducer';
 import beerLog from './beerLogReducer';
 import beerInfo from './beerInfoReducer';
 import breweries from './breweriesReducer';
-import update from './updateReducer';
+import details from './detailsReducer';
 import favorites from './favoritesReducer';
 
 // rootReducer is the primary reducer for our entire project
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   beerLog,
   beerInfo,
   breweries,
-  update,
+  details,
   favorites,
 });
 

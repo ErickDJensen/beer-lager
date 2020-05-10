@@ -3,20 +3,23 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+const moment = require('moment');
 
 class EditBeerEntry extends Component {
 
-    
 
     state = {
-        brewery: '',
-        beerStyle: '',
-        beerName: '',
-        date: '',
-        rating: '',
-        comments: '',
+        brewery_name: this.props.details.brewery_name,
+        beer_style_name: this.props.details.beer_style_name,
+        beer_name: this.props.details.beer_name,
+        date: this.props.details.date,
+        rating: this.props.details.rating,
+        comments: this.props.details.comments,
         
       }
+    
+
+
 
 
       componentDidMount = () => {
@@ -26,15 +29,18 @@ class EditBeerEntry extends Component {
     
     handleClick = (event) => {
         event.preventDefault();
-        console.log('In update handleClick', this.props.reduxStore.update);
+        console.log('In update handleClick', this.props.reduxStore.details.id);
+        if(this.refs.rating.value >5 || this.refs.rating.value < 1){
+            alert('rating must be between 1 and 5')
+        }
         this.props.dispatch({type: 'PUT_BEERINFO', payload: {
-            brewery_name: this.state.brewery,
-            beer_style_name: this.state.beerStyle,
-            beer_name: this.state.beerName,
+            brewery_name: this.state.brewery_name,
+            beer_style_name: this.state.beer_style_name,
+            beer_name: this.state.beer_name,
             date: this.state.date,
             rating: this.state.rating,
             comments: this.state.comments,
-            id: this.props.reduxStore.update,
+            id: this.props.reduxStore.details.id,
         }});
         this.props.history.push('/home');
     }
@@ -57,9 +63,9 @@ class EditBeerEntry extends Component {
                     <div className="container">
                         <h1 className="formHeadingEdit">Edit Beer Form</h1>
                         <Form>
-                        <div value={this.state.brewery} onChange={(event) => this.handleChangeFor('brewery', event)}>
+                        <div defaultValue={this.state.brewery_name} onChange={(event) => this.handleChangeFor('brewery_name', event)}>
                         <label className="formLabel">Brewery:</label>
-                                <select>
+                                <select value={this.state.brewery_name}>
                                     {this.props.reduxStore.breweries && 
                                     <>
                                     <option value="" defaultValue="Choose your option">Choose your option</option>
@@ -70,13 +76,13 @@ class EditBeerEntry extends Component {
                                     }
                                 </select>
                             </div>
-                            <div value={this.state.beerName} onChange={(event) => this.handleChangeFor('beerName', event)}>
+                            <div defaultValue={this.state.beer_name} onChange={(event) => this.handleChangeFor('beer_name', event)}>
                                 <label className="formLabel">Beer Name:</label>
-                                <input type="text"></input>
+                                <input type="text" value={this.state.beer_name}></input>
                             </div>
-                            <div value={this.state.beerStyle} onChange={(event) => this.handleChangeFor('beerStyle', event)}>
+                            <div value={this.state.beer_style_name} onChange={(event) => this.handleChangeFor('beer_style_name', event)}>
                                 <label className="formLabel">Beer Style:</label>
-                                <select>
+                                <select value={this.state.beer_style_name}>
                                     {this.props.reduxStore.beerInfo && 
                                     <>
                                     <option value="" defaultValue="Choose your option">Choose your option</option>
@@ -89,24 +95,15 @@ class EditBeerEntry extends Component {
                             </div>
                             <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
                                 <label className="formLabel">Date:</label>
-                                <input type="date"></input>
+                                <input type="text" value={moment(this.state.date).format("MMM Do YYYY")}></input>
                             </div>
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>
                             <label className="formLabel">Rating:</label>
-                                <input value="5" className="star star-5" id="star-5" type="radio" name="star" />
-                                <label className="star star-5" htmlFor="star-5"></label>
-                                <input value="4" className="star star-4" id="star-4" type="radio" name="star" />
-                                <label className="star star-4" htmlFor="star-4"></label>
-                                <input value="3" className="star star-3" id="star-3" type="radio" name="star" />
-                                <label className="star star-3" htmlFor="star-3"></label>
-                                <input value="2" className="star star-2" id="star-2" type="radio" name="star" />
-                                <label className="star star-2" htmlFor="star-2"></label>
-                                <input value="1" className="star star-1" id="star-1" type="radio" name="star" />
-                                <label className="star star-1" htmlFor="star-1"></label>
+                            <input type="number" name="rating" ref="rating" min="1" max="5" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}></input>
                             </div>
                             <div className="comments" value={this.state.comments} onChange={(event) => this.handleChangeFor('comments', event)}>
                                 <label className="formLabel">Comments:</label>
-                                <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here"></textarea>
+                                <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here" value={this.state.comments}></textarea>
                             </div>
                             <div>
                             <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm"/><Button variant="light" onClick={this.goBack}>Go Back</Button>
@@ -120,8 +117,8 @@ class EditBeerEntry extends Component {
 }
 
 const putPropsOnRedux = (reduxStore) => ({
+    details: reduxStore.details,
     reduxStore,
-    beerLog: reduxStore.beerLog,
 })
 
 export default withRouter(connect(putPropsOnRedux)(EditBeerEntry));

@@ -27,34 +27,6 @@ class LogBeerForm extends Component {
           this.props.dispatch({type: 'FETCH_BREWERIES'})
       }
     
-    //   handleChange = (event) => {
-    //     if(event.target.files[0]) {
-    //       const image = event.target.files[0];
-    //       this.setState({image});
-    //     }
-    //   }
-    
-    //   handleUpload = () => {
-    //     const {image} = this.state;
-    //     const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    //     uploadTask.on('state_changed',
-    //      (snapshot) => {
-    //       //progress function
-    //       const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-    //       this.setState({progress});
-    //      }, 
-    //      (error) => {
-    //        //error function
-    //        console.log(error);
-    //      }, 
-    //      () => {
-    //        //complete function
-    //        storage.ref('images').child(image.name).getDownloadURL().then(url => {
-    //          console.log(url);
-    //          this.setState({url});
-    //        })
-    //      });
-    //   }
 
     handleClick = (event) => {
         event.preventDefault();
@@ -141,12 +113,6 @@ class LogBeerForm extends Component {
                                 <label className="formLabel">Comments:</label>
                                 <textarea rows="3" cols="45" maxLength = "500" placeholder="Enter comments here"></textarea>
                             </div>
-                            {/* <div>
-                                <progress value={this.state.progress} max="100" />
-                                <input type="file" onChange={this.handleChange} />
-                                <button onClick={this.handleUpload}>Upload</button>
-                                <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400" />
-                            </div> */}
                             <div>
                                 <Button variant="light" onClick={this.handleClick}>Submit</Button><div className="dividerForm"/><Button variant="light" onClick={this.goBack}>Go Back</Button>
                             </div>
