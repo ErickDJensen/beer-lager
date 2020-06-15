@@ -12,7 +12,7 @@ class EditBeerEntry extends Component {
         brewery_name: this.props.details.brewery_name,
         beer_style_name: this.props.details.beer_style_name,
         beer_name: this.props.details.beer_name,
-        date: this.props.details.date,
+        date: moment(this.props.details.date).format('MM/DD/yyyy'),
         rating: this.props.details.rating,
         comments: this.props.details.comments,
 
@@ -100,7 +100,7 @@ class EditBeerEntry extends Component {
                             </div>
                             <div value={this.state.date} onChange={(event) => this.handleChangeFor('date', event)}>
                                 <label className="formLabel">Date:</label>
-                                <input type="text" value={moment(this.state.date).format("MMM Do YYYY")}></input>
+                                <input type="text" value={this.state.date}></input>
                             </div>
                             <div className="stars" value={this.state.rating} onChange={(event) => this.handleChangeFor('rating', event)}>
                                 <label className="formLabel">Rating:</label>

@@ -23,7 +23,7 @@ getFavorites = () => {
           <>
             <div className="favorite">
             <div className="homeContainer">
-                <h1 className="homeHeading">Favorites</h1>
+                <h1 className="heading">Favorites</h1>
                 <table className="table">
                     <thead>
                         <tr>

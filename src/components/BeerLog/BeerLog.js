@@ -40,7 +40,7 @@ goToBeerLog = () => {
         return (
             <div className="home">
             <div className="homeContainer">
-                <h1 className="homeHeading">Beer Log</h1>
+                <h1 className="heading">Beer Log</h1>
                 <button type="button" className="btn btn-success btn-lg btn-space" onClick={this.goToBeerLog}>Log A Beer </button>
                 <table className="table">
                     <thead>

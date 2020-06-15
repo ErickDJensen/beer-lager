@@ -76,7 +76,8 @@ input {
       opacity: 0.6;
       width: 520px;
       height: 170px;
-      margin-left: 270px;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   div.transbox p {

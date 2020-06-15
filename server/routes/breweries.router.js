@@ -5,7 +5,7 @@ const router = express.Router();
 //route to show breweries on breweries page
 router.get('/', (req, res) => {
     console.log('Brewries info GET arrived at server');
-    const queryText = `SELECT * FROM "brewery"
+    const queryText = `SELECT * FROM "brewery" ORDER BY "brewery"."name"
     `;
     pool.query(queryText)
         .then((result) => {
