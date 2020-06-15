@@ -3,7 +3,7 @@
     font-weight: 700;
     font-family: cursive;
     display: inline-block;
-    color: rgb(236, 236, 184);
+    color: gold;
     padding-left: 10px;
     padding-right: 10px;
     vertical-align: middle;
@@ -11,14 +11,14 @@
 
 .nav {
   overflow: hidden;
-  background-color: rgb(51, 17, 17);
+  background-color: #242727;
   
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: rgb(51, 17, 17);
+  background-color: transparent;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -33,7 +33,7 @@
 }
 
 .nav-link:hover {
-  background-color: whitesmoke;
+  color: gold;
 }
 
 .nav-right {

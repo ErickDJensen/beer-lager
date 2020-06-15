@@ -33,7 +33,8 @@ input {
 }
 
 .log-in:hover, .log-out:hover, .register:hover {
-  background-color: #71775a;
+  color: white;
+  background-color: rgb(109, 105, 105);
 }
 
 .link-button {
