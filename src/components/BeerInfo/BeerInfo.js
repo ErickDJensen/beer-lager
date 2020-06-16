@@ -24,15 +24,15 @@ class BeerInfo extends Component {
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>Beer Style</th>
-                            <th>Description</th>
+                            <th className="text">Beer Style</th>
+                            <th className="text">Description</th>
                         </tr>
                     </thead>
 
                     <tbody>
                     {this.props.reduxStore.beerInfo.map(beer => <tr key={beer.id}>
-                        <td>{beer.name}</td>
-                        <td>{beer.description}</td>
+                        <td className="text">{beer.name}</td>
+                        <td className="text">{beer.description}</td>
                         </tr>)}
                     </tbody>
                 </Table>
